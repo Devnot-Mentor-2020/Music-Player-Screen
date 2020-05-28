@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_screen/core/extensions/content_extensions.dart';
+
 class CurrentMusicPlayer extends StatelessWidget {
   final String songName;
   final String artistName;
@@ -15,10 +17,9 @@ class CurrentMusicPlayer extends StatelessWidget {
       title: Text(songName,style: TextStyle(fontSize: 12),),
       subtitle: Text(artistName,style: TextStyle(fontSize: 12)),
       leading: Container(
-        width: MediaQuery.of(context).size.width*0.1,
-        height: MediaQuery.of(context).size.width*0.1,
+        width: context.width*0.1,
+        height: context.width*0.1,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
           image: DecorationImage(image: AssetImage(imagePath),fit: BoxFit.cover),
         ),
         child: Center(

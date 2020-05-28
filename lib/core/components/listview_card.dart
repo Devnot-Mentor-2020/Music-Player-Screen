@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_screen/core/extensions/content_extensions.dart';
+
 class MyListViewCard extends StatelessWidget {
   final String mainText;
   final String subText;
@@ -14,10 +16,10 @@ class MyListViewCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Container(
-          height: MediaQuery.of(context).size.height*0.15,
-          width: MediaQuery.of(context).size.width*0.3,
+          height: context.height*0.15,
+          width: context.width*0.3,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(context.width * 0.02),
             image: DecorationImage(image: AssetImage(decorationImagePath),fit:BoxFit.cover),
           ),
         ),

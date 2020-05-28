@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:music_screen/core/extensions/content_extensions.dart';
+
 class StackBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
         Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height*0.41,
+          width: context.width,
+          height: context.height*0.41,
           decoration: BoxDecoration(
               image: DecorationImage(image: AssetImage("assets/images/background.png"),fit: BoxFit.cover)
           ),
         ),
         Positioned(
-            top: MediaQuery.of(context).size.height*0.18  ,
-            left: MediaQuery.of(context).size.width*0.08,
+            top: context.height*0.18  ,
+            left: context.width*0.08,
             child: columnInStack(context)
         )
       ],
@@ -25,11 +27,11 @@ class StackBar extends StatelessWidget {
       children: <Widget>[
         Container(
           decoration: BoxDecoration(
-              borderRadius:BorderRadius.circular(15),
+              borderRadius:BorderRadius.circular(context.width*0.1),
               border: Border.all(color: Colors.white,width: 1.5)
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0 ),
+            padding:EdgeInsets.all(context.width * 0.02),
             child: Text("Featured",style: TextStyle(color: Colors.white,),),
           ),
         ),
@@ -38,7 +40,7 @@ class StackBar extends StatelessWidget {
         Row(
           children: <Widget>[
             Text("Feel the Bass",style: TextStyle(color: Colors.white),),
-            SizedBox(width: MediaQuery.of(context).size.width*0.05,),
+            SizedBox(width: context.width*0.05,),
             Text("1 Hour",style: TextStyle(color: Colors.white),)
           ],
         ),
