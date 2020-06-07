@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:music_screen/core/components/listview_card.dart';
+import 'package:music_screen/core/extensions/content_extensions.dart';
+
 class MyListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height*0.23,
-      padding: const EdgeInsets.only(left: 15),
+      height: context.height*0.23,
+      padding: EdgeInsets.only(left: context.width * 0.03),
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
@@ -15,7 +17,7 @@ class MyListView extends StatelessWidget {
             decorationImagePath: "assets/images/scrollable1.png",
           ),
           Padding(
-            padding: const EdgeInsets.only(left:15.0),
+            padding: EdgeInsets.only(left: context.width * 0.03),
             child: MyListViewCard(
               mainText: "Feel like Dancing",
               subText: "35 mins",
@@ -23,7 +25,7 @@ class MyListView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left:15.0),
+            padding: EdgeInsets.only(left: context.width * 0.03),
             child: MyListViewCard(
               mainText: "Somewhere Dark",
               subText: "3 hours",

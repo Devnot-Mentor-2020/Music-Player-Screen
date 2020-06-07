@@ -1,9 +1,10 @@
-import 'package:flutter/cupertino.dart';
+import 'package:music_screen/core/extensions/content_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:music_screen/view/playlist_view/current_music_player.dart';
 import 'package:music_screen/view/playlist_view/listview.dart';
 import 'package:music_screen/view/stack_view/stack_bar.dart';
 import 'package:music_screen/view/tab/bottom_tab_bar.dart';
+
 class MusicPage extends StatefulWidget {
   @override
   _MusicPageState createState() => _MusicPageState();
@@ -30,10 +31,10 @@ class _MusicPageState extends State<MusicPage> with SingleTickerProviderStateMix
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        SizedBox(height: MediaQuery.of(context).size.height*0.05,),
+        SizedBox(height: context.height*0.05,),
         StackBar(),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(context.width*0.02),
           child: Text("For You",style: TextStyle(fontSize: 25),),
         ),
         MyListView(),
